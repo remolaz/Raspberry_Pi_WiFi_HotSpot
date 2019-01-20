@@ -24,7 +24,8 @@ static domain_name_servers = XX.XX.XX.XX
 
 # Scripts for the Wi-Fi Hotspot
 
-Put the Scripts in your root folder: ./pi/
+Place the files in your root directory: /home/pi/
+
 To execute the scripts you first need to add the execution permission to both files.
 In the terminal write: 
 
