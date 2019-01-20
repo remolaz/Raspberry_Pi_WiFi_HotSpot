@@ -1,0 +1,78 @@
+#!/bin/bash
+# This is my first script! This is a comment.
+# To EXECUTE: ./D_HotSpot
+
+echo Hello World # Comments can be inline with code too.
+
+# ########################################## F OK
+
+echo -START- Delete LINE: (iptables-restore < /etc/iptables.ipv4.nat) IN PATH (/etc/rc.local)
+
+sed -i '\|iptables-restore < /etc/iptables.ipv4.nat|d' /etc/rc.local
+
+echo -END- 
+
+# ########################################## F OK
+
+echo -START- SUBSTITUTE LINE: (net.ipv4.ip_forward=1) IN PATH (/etc/sysctl.conf) WITH (#net.ipv4.ip_forward=1)
+
+sed -i -e 's/net.ipv4.ip_forward=1/#net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+
+echo -END- 
+
+echo -START- Delete LINE: (#net.ipv4.ip_forward=1) IN PATH (/etc/sysctl.conf)
+
+sed -i '\|##net.ipv4.ip_forward=1|d' /etc/sysctl.conf
+
+echo -END- 
+
+# ########################################## F
+
+echo -START- Rename FILE: (/etc/dnsmasq.conf) IN (/etc/dnsmasq.conf.hotspot)
+
+sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.hotspot
+
+echo -END- 
+
+echo -START- Rename FILE: (/etc/dnsmasq.conf.bak) IN (/etc/dnsmasq.conf)
+
+sudo mv /etc/dnsmasq.conf.bak /etc/dnsmasq.conf
+
+echo -END- 
+
+# ########################################## F OK
+
+echo -START- Delete LINE: (DAEMON_CONF="/etc/hostapd/hostapd.conf") IN PATH (/etc/default/hostapd)
+
+sed -i '\|DAEMON_CONF="/etc/hostapd/hostapd.conf"|d' /etc/default/hostapd
+
+echo -END- 
+
+# ########################################## F
+
+echo -START- Rename FILE: (/etc/network/interfaces) IN (/etc/network/interfaces.hotspot)
+
+sudo mv /etc/network/interfaces /etc/network/interfaces.hotspot
+
+echo -END- 
+
+echo -START- Rename FILE: (/etc/network/interfaces.bak) IN (/etc/network/interfaces)
+
+sudo mv /etc/network/interfaces.bak /etc/network/interfaces
+
+echo -END- 
+
+# ########################################## F OK
+
+echo -START- Delete LINE: (denyinterfaces wlan0) IN PATH (/etc/dhcpcd.conf)
+
+sed -i '/denyinterfaces wlan0/d' /etc/dhcpcd.conf
+
+echo -END- 
+
+# ########################################## 
+
+echo REBOOT
+
+sudo reboot
+
