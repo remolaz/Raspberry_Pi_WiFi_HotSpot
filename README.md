@@ -1,4 +1,4 @@
-# Universidad_de_Zaragoza_HotSpot
+# Universidad de Zaragoza Wi-Fi HotSpot
 Activation and Desactivation BASH Scripts for Wi-Fi Hotspot on Raspberry Pi B+
 
 # Configure a Static IP on Ethernet
