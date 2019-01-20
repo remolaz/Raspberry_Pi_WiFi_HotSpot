@@ -22,3 +22,25 @@ static domain_name_servers = XX.XX.XX.XX
 - **routers** is the address of your router (or gateway)
 - **domain_name_servers** is the DNS address(es) 
 
+# Scripts for the Wi-Fi Hotspot
+
+Put the Scripts in your root folder: ./pi/
+To execute the scripts you first need to add the execution permission to both files.
+In the terminal write: 
+
+~~~~
+chmod g+rwx DesactiveZarHotSpot
+chmod u+rwx DesactiveZarHotSpot 
+chmod o+rwx DesactiveZarHotSpot 
+
+chmod g+rwx ActiveZarHotSpot
+chmod u+rwx ActiveZarHotSpot 
+chmod o+rwx ActiveZarHotSpot 
+~~~~
+
+To execute them:
+
+~~~~
+./ActiveZarHotSpot
+./DesactiveZarHotSpot
+~~~~
