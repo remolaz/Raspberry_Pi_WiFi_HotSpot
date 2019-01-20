@@ -1,7 +1,7 @@
 # Universidad de Zaragoza Wi-Fi HotSpot
 Activation and Desactivation BASH Scripts for Wi-Fi Hotspot on Raspberry Pi B+
 
-# Configure a Static IP on Ethernet
+## Configure a Static IP on Ethernet
 
 Open the Raspberry Pi Terminal and write:
 
@@ -22,7 +22,7 @@ static domain_name_servers = XX.XX.XX.XX
 - **routers** is the address of your router (or gateway)
 - **domain_name_servers** is the DNS address(es) 
 
-# Scripts for the Wi-Fi Hotspot
+## Scripts for the Wi-Fi Hotspot
 
 Place the files in your root directory: /home/pi/
 
