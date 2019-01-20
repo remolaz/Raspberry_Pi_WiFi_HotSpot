@@ -1,10 +1,10 @@
 #!/bin/bash
-# This is my first script! This is a comment.
 # To EXECUTE: ./D_HotSpot
 
-echo Hello World # Comments can be inline with code too.
+echo We are going to Activate the Zaragoza HotSpot ...
+echo At the end Raspberry Pi will reboot 
 
-# ########################################## F OK
+# ##########################################
 
 echo -START- Add LINE: (denyinterfaces wlan0) AT THE END - IN PATH (/etc/dhcpcd.conf)
 
@@ -13,7 +13,7 @@ denyinterfaces wlan0' /etc/dhcpcd.conf
 
 echo -END- 
 
-# ########################################## F
+# ##########################################
 
 echo -START- Rename FILE: (/etc/network/interfaces) IN (/etc/network/interfaces.bak)
 
@@ -21,7 +21,7 @@ sudo mv /etc/network/interfaces /etc/network/interfaces.bak
 
 echo -END- 
 
-# ########################################## F
+# ##########################################
 
 echo -START- Rename FILE: (/etc/network/interfaces.hotspot) IN (/etc/network/interfaces)
 
@@ -29,7 +29,7 @@ sudo mv /etc/network/interfaces.hotspot /etc/network/interfaces
 
 echo -END- 
 
-# ########################################## N OK
+# ########################################## 
 
 echo -START- Add LINE: (DAEMON_CONF="/etc/hostapd/hostapd.conf") AFTER (#DAEMON_CONF="") IN PATH (/etc/default/hostapd)
 
@@ -39,7 +39,7 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"' /etc/default/hostapd
 
 echo -END- 
 
-# ########################################## F
+# ########################################## 
 
 echo -START- Rename FILE: (/etc/dnsmasq.conf) IN (/etc/dnsmasq.conf.bak)
 
@@ -47,7 +47,7 @@ sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
 
 echo -END- 
 
-# ########################################## F
+# ########################################## 
 
 echo -START- Rename FILE: (/etc/dnsmasq.conf.hotspot) IN (/etc/dnsmasq.conf)
 
@@ -55,7 +55,7 @@ sudo mv /etc/dnsmasq.conf.hotspot /etc/dnsmasq.conf
 
 echo -END- 
 
-# ########################################## F OK
+# ########################################## 
 
 echo -START- Add LINE: (net.ipv4.ip_forward=1) AFTER (#net.ipv4.ip_forward=1) IN PATH (/etc/sysctl.conf)
 
@@ -65,7 +65,7 @@ net.ipv4.ip_forward=1' /etc/sysctl.conf
 
 echo -END- 
 
-# ########################################## F OK
+# ########################################## 
 
 echo -START- Add LINE: (iptables-restore < /etc/iptables.ipv4.nat) BEFORE (exit 0) IN PATH (/etc/rc.local)
 
