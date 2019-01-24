@@ -26,8 +26,8 @@ static domain_name_servers = XX.XX.XX.XX
 
 Place the files in your root directory: /home/pi/
 
-Before to execute the scripts you first need to add the execution permission to both files.
-In the terminal write: 
+Before to execute the scripts you first need to add the execution permission to both files.  
+To give scripts full access to the Owner ***u***, the Owner-Group ***g*** and Everyone else ***o***, write in the terminal: 
 
 ~~~~
 chmod g+rwx DesactiveZarHotSpot
