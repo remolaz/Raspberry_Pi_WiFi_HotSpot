@@ -133,3 +133,4 @@ static domain_name_servers = XX.XX.XX.XX
 - **ip_address** is the IP STATIC address
 - **routers** is the address of your router (or gateway)
 - **domain_name_servers** is the DNS address(es) 
+To get those values: ***ipconfig*** on Windows Terminal or ***ifconfig*** in Non-Windows machines Terminal.
