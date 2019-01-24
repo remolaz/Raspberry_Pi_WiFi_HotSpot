@@ -47,11 +47,11 @@ To execute them:
 ~~~~
 
 ## One Time Step for First Configuration
-
+Install ***hostapd*** and ***dnsmasq***. Open the Terminal and write:
 ~~~~
 sudo apt-get -y install hostapd dnsmasq
 ~~~~
-
+Continue in the Terminal:
 ~~~~
 sudo mv /etc/network/interfaces /etc/network/interfaces.bak
 sudo nano /etc/network/interfaces
@@ -74,13 +74,10 @@ iface wlan0 inet static
     broadcast 192.168.5.255
 ~~~~
 
-***Control+x*** To Exit
-Y to Save
-And then, when asked with which name to save the file write:
-~~~~
-/etc/network/interfaces.hotspot
-~~~~
-
+***Control+x*** to Exit
+***Y*** to Save
+And then, when asked with which name to save the file write: ***/etc/network/interfaces.hotspot***
+Continue in the Terminal:
 ~~~~
 sudo mv /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.bak
 sudo nano /etc/hostapd/hostapd.conf
@@ -106,8 +103,9 @@ rsn_pairwise=CCMP
 ~~~~
 
 ***Control+x*** To Exit
-Y to Save
-And then, when asked with which name to save the file write:  /etc/hostapd/hostapd.conf.hotspot
+***Y*** to Save
+And then, when asked with which name to save the file write:  ***/etc/hostapd/hostapd.conf.hotspot***
+Continue in the Terminal:
 
 ~~~~
 sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
@@ -125,7 +123,7 @@ domain-needed
 bogus-priv
 dhcp-range=192.168.5.100,192.168.5.200,24h
 ~~~~
-
+Continue in the Terminal:
 ~~~~
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE  
 sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
