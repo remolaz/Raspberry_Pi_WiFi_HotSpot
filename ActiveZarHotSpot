@@ -1,5 +1,5 @@
 #!/bin/bash
-# To EXECUTE: ./D_HotSpot
+# To EXECUTE: ./ActiveZarHotSpot
 
 echo We are going to Activate the Zaragoza HotSpot ...
 echo At the end Raspberry Pi will reboot 
