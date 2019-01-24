@@ -76,7 +76,7 @@ iface wlan0 inet static
 
 ***Control+x*** to Exit
 ***Y*** to Save
-And then, when asked with which name to save the file write: ***/etc/network/interfaces.hotspot***
+And then, when asked with which name to save the file, write: ***/etc/network/interfaces.hotspot***  
 Continue in the Terminal:
 ~~~~
 sudo mv /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.bak
@@ -102,9 +102,9 @@ wpa_passphrase=raspberry
 rsn_pairwise=CCMP
 ~~~~
 
-***Control+x*** To Exit
+***Control+x*** to Exit
 ***Y*** to Save
-And then, when asked with which name to save the file write:  ***/etc/hostapd/hostapd.conf.hotspot***
+And then, when asked with which name to save the file, write:  ***/etc/hostapd/hostapd.conf.hotspot***  
 Continue in the Terminal:
 
 ~~~~
