@@ -1,26 +1,6 @@
 # Universidad de Zaragoza Wi-Fi HotSpot
-Activation and Desactivation BASH Scripts for Wi-Fi Hotspot on Raspberry Pi B+
-
-## Configure a Static IP on Ethernet (Optional)
-
-Open the Raspberry Pi Terminal and write:
-
-~~~~
-sudo nano /etc/dhcpcd.conf
-~~~~
-
-Add these lines at the end of the file:
-
-~~~~
-interface eth0 
-static ip_address = XX.XX.XX.XX
-static routers = XX.XX.XX.XX
-static domain_name_servers = XX.XX.XX.XX
-~~~~
-
-- **ip_address** is the IP STATIC address
-- **routers** is the address of your router (or gateway)
-- **domain_name_servers** is the DNS address(es) 
+Activation and Desactivation BASH Scripts for Wi-Fi Hotspot on Raspberry Pi B+  
+If it's the first time you setup the network, you need to follow the One-Time Procedure written below first.
 
 ## Scripts for the Wi-Fi Hotspot
 
@@ -132,3 +112,24 @@ sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 ~~~~
 
 Reference Guide: https://learn.sparkfun.com/tutorials/setting-up-a-raspberry-pi-3-as-an-access-point/all
+
+## Configure a Static IP on Ethernet (Optional)
+If your Network uses Static IPs you want your Raspberry Pi to use one of them. To do that, follow this lines below.  
+Open the Raspberry Pi Terminal and write:
+
+~~~~
+sudo nano /etc/dhcpcd.conf
+~~~~
+
+Add these lines at the end of the file:
+
+~~~~
+interface eth0 
+static ip_address = XX.XX.XX.XX
+static routers = XX.XX.XX.XX
+static domain_name_servers = XX.XX.XX.XX
+~~~~
+
+- **ip_address** is the IP STATIC address
+- **routers** is the address of your router (or gateway)
+- **domain_name_servers** is the DNS address(es) 
