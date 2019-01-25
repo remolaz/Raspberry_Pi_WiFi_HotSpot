@@ -9,7 +9,7 @@ Before using the scripts is important to follow the One-Time procedure to setup 
 ./DesactiveZarHotSpot
 ~~~~
 
-## One Time Step for First Configuration
+## One-Time Procedure for First Network Configuration
 It's necessary to install ***hostapd*** and ***dnsmasq***. Open the Terminal and write:
 ~~~~
 sudo apt-get -y install hostapd dnsmasq
@@ -97,11 +97,11 @@ sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 
 Reference Guide: https://learn.sparkfun.com/tutorials/setting-up-a-raspberry-pi-3-as-an-access-point/all
 
-#### How to prepare the Scripts to be executed for the Wi-Fi Hotspot
+### How to prepare the Scripts to be executed for the Wi-Fi Hotspot
 
 Now it's time to place the Scripts files ***ActiveZarHotSpot*** and ***DesactiveZarHotSpot*** in your root directory: ***/home/pi/***  
 
-Before to execute the scripts you first need to add the execution permission to both files.  
+Before to execute the scripts, you first need to add the execution permission to both files.  
 To give to the Owner ***u***, the Owner-Group ***g*** and Everyone else ***o***, full access to the Scripts, write in the terminal: 
 
 ~~~~
