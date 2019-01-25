@@ -1,25 +1,8 @@
-# Universidad de Zaragoza Wi-Fi HotSpot
-Activation and Desactivation BASH Scripts for Wi-Fi Hotspot on Raspberry Pi B+  
-If it's the first time you setup the network, you need to follow the One-Time Procedure written below first.
+# Wi-Fi HotSpot for Universidad de Zaragoza with Raspberry Pi 3 B+
+Activation and Desactivation BASH Scripts for Wi-Fi Hotspot on Raspberry Pi 3 B+  
+Before using the scripts is important to follow the One-Time procedure to setup the network.
 
-## Scripts for the Wi-Fi Hotspot
-
-Place the files in your root directory: /home/pi/
-
-Before to execute the scripts you first need to add the execution permission to both files.  
-To give scripts full access to the Owner ***u***, the Owner-Group ***g*** and Everyone else ***o***, write in the terminal: 
-
-~~~~
-chmod g+rwx DesactiveZarHotSpot
-chmod u+rwx DesactiveZarHotSpot 
-chmod o+rwx DesactiveZarHotSpot 
-
-chmod g+rwx ActiveZarHotSpot
-chmod u+rwx ActiveZarHotSpot 
-chmod o+rwx ActiveZarHotSpot 
-~~~~
-
-To execute them:
+## To execute the Scripts for the Wi-Fi Hotspot, write in the Terminal:
 
 ~~~~
 ./ActiveZarHotSpot
@@ -27,7 +10,7 @@ To execute them:
 ~~~~
 
 ## One Time Step for First Configuration
-Install ***hostapd*** and ***dnsmasq***. Open the Terminal and write:
+It's necessary to install ***hostapd*** and ***dnsmasq***. Open the Terminal and write:
 ~~~~
 sudo apt-get -y install hostapd dnsmasq
 ~~~~
@@ -37,7 +20,7 @@ sudo mv /etc/network/interfaces /etc/network/interfaces.bak
 sudo nano /etc/network/interfaces
 ~~~~
 
-At the bottom of that file, add the following:
+At the bottom of that file, add the following lines:
 
 ~~~~
 auto lo
@@ -54,15 +37,16 @@ iface wlan0 inet static
     broadcast 192.168.5.255
 ~~~~
 
-***Control+x*** to Exit
-***Y*** to Save
-And then, when asked with which name to save the file, write: ***/etc/network/interfaces.hotspot***  
+***Control+x*** to Exit  
+***Y*** to Save  
+and then, when asked with which name to save the file, write: ***/etc/network/interfaces.hotspot***  
+
 Continue in the Terminal:
 ~~~~
 sudo mv /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.bak
 sudo nano /etc/hostapd/hostapd.conf
 ~~~~
-Enter the following into that file. Feel fee to change the ***ssid*** (WiFi network name) and the ***wpa_passphrase*** (password to join the network) to whatever you’d like. You can also change the channel to something in the 1-11 range (if channel 6 is too crowded in your area).
+Enter the following lines into the ***hostapd.conf*** file. Feel fee to change the ***ssid*** (WiFi network name) and the ***wpa_passphrase*** (password to join the network) to whatever you’d like. You can also change the channel to something in the 1-11 range (if channel 6 is too crowded in your area).
 
 ~~~~
 interface=wlan0
@@ -82,11 +66,11 @@ wpa_passphrase=raspberry
 rsn_pairwise=CCMP
 ~~~~
 
-***Control+x*** to Exit
-***Y*** to Save
-And then, when asked with which name to save the file, write:  ***/etc/hostapd/hostapd.conf.hotspot***  
+***Control+x*** to Exit  
+***Y*** to Save  
+and then, when asked with which name to save the file, write:  ***/etc/hostapd/hostapd.conf.hotspot***  
+  
 Continue in the Terminal:
-
 ~~~~
 sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.bak
 sudo nano /etc/dnsmasq.conf
@@ -112,6 +96,23 @@ sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 ~~~~
 
 Reference Guide: https://learn.sparkfun.com/tutorials/setting-up-a-raspberry-pi-3-as-an-access-point/all
+
+#### How to prepare the Scripts to be executed for the Wi-Fi Hotspot
+
+Now it's time to place the Scripts files ***ActiveZarHotSpot*** and ***DesactiveZarHotSpot*** in your root directory: ***/home/pi/***  
+
+Before to execute the scripts you first need to add the execution permission to both files.  
+To give to the Owner ***u***, the Owner-Group ***g*** and Everyone else ***o***, full access to the Scripts, write in the terminal: 
+
+~~~~
+chmod g+rwx DesactiveZarHotSpot
+chmod u+rwx DesactiveZarHotSpot 
+chmod o+rwx DesactiveZarHotSpot 
+
+chmod g+rwx ActiveZarHotSpot
+chmod u+rwx ActiveZarHotSpot 
+chmod o+rwx ActiveZarHotSpot 
+~~~~
 
 ## Configure a Static IP on Ethernet (Optional)
 If your Network uses Static IPs you want your Raspberry Pi to use one of them. To do that, follow this lines below.  
