@@ -1,6 +1,6 @@
 # Wi-Fi HotSpot for Universidad de Zaragoza with Raspberry Pi 3 B+
 Activation and Desactivation BASH Scripts for Wi-Fi Hotspot on Raspberry Pi 3 B+  
-Before using the scripts is important to follow the One-Time procedure to setup the network.
+Before using the scripts is important to follow the One-Time Procedure to setup the network.
 
 ## To execute the Scripts for the Wi-Fi Hotspot, write in the Terminal:
 
